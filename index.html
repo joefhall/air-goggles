@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Air Goggles - Exploring new ways to map air pollution, starting in London</title>
+      
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://cdn-webgl.eegeo.com/eegeojs/api/v0.1.780/eegeo.js"></script>
+  </head>
+  <body>
+    <div id="map" style="width: 1000px; height: 600px;"></div>
+    <input id="tilt" type="text" onchange="setTilt(this.value)" value="15.0" />
+
+    <script>
+      var map = L.eeGeo.map('map', '1abb5be8e0fbe2757354d327c4e9481b', {
+        center: [51.501987, -0.111432],
+        zoom: 15,
+        tiltDegrees:15.0
+      });
+      
+      function setTilt(tiltDegrees) {
+        map.setView([51.501987, -0.111432], 15, {tiltDegrees: tiltDegrees});
+      }
+    </script>
+  </body>
+</html>
